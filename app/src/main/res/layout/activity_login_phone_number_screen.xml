@@ -18,7 +18,6 @@
         android:layout_weight="20">
 
         <RelativeLayout
-
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_margin="10dp"
@@ -30,8 +29,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="1"
-                android:textSize="18sp"
-                android:textColor="@color/whiteColor"/>
+                android:textColor="@color/whiteColor"
+                android:textSize="18sp"/>
 
         </RelativeLayout>
 
@@ -53,30 +52,13 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
-
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/circular_bg"
-            android:backgroundTint="@color/lightGreyColor">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="3"
-                android:textSize="18sp"
-                android:textColor="@color/whiteColor"/>
-
-        </RelativeLayout>
-
     </LinearLayout>
     
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/phone_icon"
+        android:contentDescription="Phone Icon"
         app:tint="@color/primaryColor"
         android:layout_weight="20"/>
 
@@ -100,7 +82,9 @@
 
         <com.hbb20.CountryCodePicker
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            app:ccp_showFlag="false"
+            app:ccp_showNameCode="false"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -111,7 +95,8 @@
             android:inputType="phone"
             android:layout_margin="10dp"
             android:background="@drawable/edit_text_rounded_corner"
-            android:elevation="5dp"/>
+            android:elevation="7dp"
+            android:autofillHints="phone"/>
 
     </LinearLayout>
 
@@ -134,6 +119,70 @@
             android:indeterminateTint="@color/primaryColor"
             android:layout_gravity="center"/>
 
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Or continue with"
+        android:textSize="19sp"
+        android:gravity="center"
+        android:textColor="@color/blackColor"
+        android:letterSpacing="0.04"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="10">
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/circular_bg"
+            android:backgroundTint="@color/whiteColor">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/google_icon"
+                android:contentDescription="Google Icon"
+                android:scaleType="fitCenter"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/circular_bg"
+            android:backgroundTint="@color/whiteColor">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/facebook_icon"
+                android:contentDescription="Facebook Icon"
+                android:scaleType="fitCenter"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/circular_bg"
+            android:backgroundTint="@color/whiteColor">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/github_icon"
+                android:contentDescription="Github Icon"
+                android:scaleType="fitCenter"/>
+
+        </RelativeLayout>
 
     </LinearLayout>
 
