@@ -9,8 +9,8 @@
     android:gravity="center"
     android:layout_margin="20dp"
     android:weightSum="100"
-    tools:context=".LoginPhoneNumberScreen">
-    
+    tools:context=".LoginOtpScreen">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
             android:layout_height="32dp"
             android:layout_margin="10dp"
             android:background="@drawable/circular_bg"
-            android:backgroundTint="@color/primaryColor">
+            android:backgroundTint="@color/lightGreyColor">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -40,7 +40,7 @@
             android:layout_height="32dp"
             android:layout_margin="10dp"
             android:background="@drawable/circular_bg"
-            android:backgroundTint="@color/lightGreyColor">
+            android:backgroundTint="@color/primaryColor">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -53,7 +53,6 @@
         </RelativeLayout>
 
         <RelativeLayout
-
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_margin="10dp"
@@ -66,24 +65,24 @@
                 android:layout_centerInParent="true"
                 android:text="3"
                 android:textColor="@color/whiteColor"
-                android:textSize="18sp" />
+                android:textSize="18sp"/>
 
         </RelativeLayout>
 
     </LinearLayout>
-    
+
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/phone_icon"
-        android:contentDescription="Phone Icon"
+        android:src="@drawable/otp_icon"
+        android:contentDescription="OTP Icon"
         app:tint="@color/primaryColor"
         android:layout_weight="20"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter mobile number"
+        android:text="Enter OTP sent on mobile"
         android:layout_gravity="center_vertical"
         android:textColor="@color/blackColor"
         android:letterSpacing="0.08"
@@ -98,24 +97,17 @@
         android:gravity="center"
         android:layout_weight="5">
 
-        <com.hbb20.CountryCodePicker
-            android:id="@+id/loginCountryCode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:ccp_showFlag="false"
-            app:ccp_showNameCode="false" />
-
         <EditText
-            android:id="@+id/loginPhoneNumber"
+            android:id="@+id/loginOtp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:autofillHints="phone"
+            android:autofillHints="number"
             android:background="@drawable/edit_text_rounded_corner"
             android:elevation="7dp"
-            android:hint="Phone Number"
-            android:inputType="phone"
-            android:maxLength="10"
+            android:hint="Enter OTP"
+            android:inputType="number"
+            android:maxLength="6"
             android:padding="10dp"
             android:textColor="@color/blackColor" />
 
@@ -126,14 +118,14 @@
         android:layout_height="100dp"
         android:gravity="center_vertical"
         android:orientation="vertical"
-        android:layout_weight="20">
+        android:layout_weight="10">
 
         <Button
-            android:id="@+id/sendOtpButton"
+            android:id="@+id/submitOtpButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_rounded_corner"
-            android:text="Send OTP" />
+            android:text="Submit OTP" />
 
         <ProgressBar
             android:id="@+id/loginProgressBar"
@@ -145,72 +137,13 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/resendOtpButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Or continue with"
-        android:textSize="19sp"
+        android:layout_weight="10"
         android:gravity="center"
-        android:textColor="@color/blackColor"
-        android:letterSpacing="0.04"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_weight="10">
-
-        <RelativeLayout
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="20dp"
-            android:background="@drawable/circular_bg"
-            android:backgroundTint="@color/whiteColor">
-
-            <ImageView
-                android:id="@+id/googleButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:contentDescription="Google Icon"
-                android:scaleType="fitCenter"
-                android:src="@drawable/google_icon" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="20dp"
-            android:background="@drawable/circular_bg"
-            android:backgroundTint="@color/whiteColor">
-
-            <ImageView
-                android:id="@+id/facebookButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:contentDescription="Facebook Icon"
-                android:scaleType="fitCenter"
-                android:src="@drawable/facebook_icon" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="20dp"
-            android:background="@drawable/circular_bg"
-            android:backgroundTint="@color/whiteColor">
-
-            <ImageView
-                android:id="@+id/githubButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:contentDescription="Github Icon"
-                android:scaleType="fitCenter"
-                android:src="@drawable/github_icon" />
-
-        </RelativeLayout>
-
-    </LinearLayout>
+        android:text="Resend OTP"
+        android:textSize="17sp" />
 
 </LinearLayout>
 
