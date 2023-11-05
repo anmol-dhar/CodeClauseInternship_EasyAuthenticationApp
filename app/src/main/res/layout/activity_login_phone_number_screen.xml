@@ -84,7 +84,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Enter mobile number"
-        android:layout_gravity="center_vertical"
+        android:gravity="center"
         android:textColor="@color/blackColor"
         android:letterSpacing="0.08"
         android:textStyle="bold"
@@ -115,7 +115,6 @@
             android:elevation="7dp"
             android:hint="Phone Number"
             android:inputType="phone"
-            android:maxLength="10"
             android:padding="10dp"
             android:textColor="@color/blackColor" />
 
@@ -213,11 +212,3 @@
     </LinearLayout>
 
 </LinearLayout>
-
-
-
-
-
-
-
-

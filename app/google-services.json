@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "74584934086",
+    "project_id": "easy-authentication-backend",
+    "storage_bucket": "easy-authentication-backend.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74584934086:android:db6348bed99f0bde6479c7",
+        "android_client_info": {
+          "package_name": "com.anmol.easyauthenticationapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyUNb8xfvkA1GPfdW2IXtBznEYpeoxzUg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

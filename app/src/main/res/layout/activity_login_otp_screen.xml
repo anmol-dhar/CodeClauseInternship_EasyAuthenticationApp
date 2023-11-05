@@ -77,18 +77,31 @@
         android:src="@drawable/otp_icon"
         android:contentDescription="OTP Icon"
         app:tint="@color/primaryColor"
-        android:layout_weight="20"/>
+        android:layout_weight="15"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter OTP sent on mobile"
+        android:text="OTP Verification"
         android:layout_gravity="center_vertical"
         android:textColor="@color/blackColor"
         android:letterSpacing="0.08"
+        android:gravity="center"
         android:textStyle="bold"
-        android:textSize="25sp"
-        android:layout_weight="5"/>
+        android:textSize="30sp"
+        android:layout_weight="10"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter the OTP sent to your mobile number"
+        android:layout_gravity="center_vertical"
+        android:textColor="@color/darkGreyColor"
+        android:letterSpacing="0.08"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:layout_weight="10"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -115,6 +128,33 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_weight="10">
+
+        <TextView
+            android:id="@+id/didntReceiveOtp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Didn't receive the OTP ? "
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/darkGreyColor"
+            android:textSize="17sp"/>
+
+        <TextView
+            android:id="@+id/resendOtpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resend OTP"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/primaryColor"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="100dp"
         android:gravity="center_vertical"
         android:orientation="vertical"
@@ -135,15 +175,6 @@
             android:indeterminateTint="@color/primaryColor" />
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/resendOtpButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="10"
-        android:gravity="center"
-        android:text="Resend OTP"
-        android:textSize="17sp" />
 
 </LinearLayout>
 

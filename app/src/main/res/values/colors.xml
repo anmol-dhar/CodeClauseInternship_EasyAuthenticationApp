@@ -9,5 +9,6 @@
 
     <color name="offWhiteColor">#FDFDFD</color>
     <color name="lightGreyColor">#C3C3C3</color>
+    <color name="darkGreyColor">#707073</color>
 
 </resources>
