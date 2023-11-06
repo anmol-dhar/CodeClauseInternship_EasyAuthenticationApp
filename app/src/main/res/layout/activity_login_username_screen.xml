@@ -108,7 +108,6 @@
             android:elevation="7dp"
             android:hint="Username"
             android:inputType="text"
-            android:maxLength="10"
             android:padding="10dp"
             android:textColor="@color/blackColor" />
 
