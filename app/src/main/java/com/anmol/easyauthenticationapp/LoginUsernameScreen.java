@@ -47,7 +47,7 @@ public class LoginUsernameScreen extends AppCompatActivity {
 
         String username = usernameInput.getText().toString();
         if(username.isEmpty() || username.length()<3){
-            usernameInput.setError("Username length should be at least 3 chars");
+            usernameInput.setError("Username length should be at least 3 characters");
             return;
         }
 
@@ -90,7 +90,6 @@ public class LoginUsernameScreen extends AppCompatActivity {
         });
     }
 
-
     void setInProgress(boolean inProgress){
         if(inProgress){
             progressBar.setVisibility(View.VISIBLE);
@@ -101,27 +100,3 @@ public class LoginUsernameScreen extends AppCompatActivity {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
