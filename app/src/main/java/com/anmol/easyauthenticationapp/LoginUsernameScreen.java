@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.anmol.easyauthenticationapp.model.UserModel;
 import com.anmol.easyauthenticationapp.utils.FirebaseUtil;
@@ -65,7 +66,10 @@ public class LoginUsernameScreen extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 setInProgress(false);
                 if(task.isSuccessful()){
+                    Toast.makeText(getApplicationContext(), "Success OTP login", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginUsernameScreen.this, MainActivity.class);
+                    intent.putExtra("phone", phoneNumber);
+                    intent.putExtra("username", username);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
                     startActivity(intent);
                 }

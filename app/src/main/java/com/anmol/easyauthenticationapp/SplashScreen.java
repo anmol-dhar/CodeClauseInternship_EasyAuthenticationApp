@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.anmol.easyauthenticationapp.utils.FirebaseUtil;
+import com.facebook.AccessToken;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 
 public class SplashScreen extends AppCompatActivity {
@@ -20,7 +21,8 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void run() {
 
-                if(FirebaseUtil.isLoggedIn() || GoogleSignIn.getLastSignedInAccount(SplashScreen.this)!=null){
+                if(FirebaseUtil.isLoggedIn() || GoogleSignIn.getLastSignedInAccount(SplashScreen.this)!=null
+                        || (AccessToken.getCurrentAccessToken() != null && !AccessToken.getCurrentAccessToken().isExpired())){
                     startActivity(new Intent(SplashScreen.this,MainActivity.class));
                 }
                 else {
