@@ -42,6 +42,7 @@ public class LoginPhoneNumberScreen extends AppCompatActivity {
     GoogleSignInClient gsc;
     ImageView googleButton;
     ImageView facebookButton;
+    ImageView githubButton;
     CallbackManager callbackManager;
 
     @Override
@@ -115,9 +116,20 @@ public class LoginPhoneNumberScreen extends AppCompatActivity {
             LoginManager.getInstance().logInWithReadPermissions(LoginPhoneNumberScreen.this, Collections.singletonList("public_profile"));
         });
 
+        //Github Button
+        githubButton =  findViewById(R.id.githubButton);
+        githubButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginPhoneNumberScreen.this, GithubAuth.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
+            }
+        });
+
     }
 
-    //Google SignIn
+    //Google SignIn method
     void signIn(){
         Intent signInIntent = gsc.getSignInIntent();
         startActivityForResult(signInIntent,1000);
@@ -134,7 +146,6 @@ public class LoginPhoneNumberScreen extends AppCompatActivity {
 
             try{
                 task.getResult(ApiException.class);
-                Toast.makeText(getApplicationContext(), "Success Google login", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(LoginPhoneNumberScreen.this, MainActivity.class);
                 startActivity(intent);
                 finish();

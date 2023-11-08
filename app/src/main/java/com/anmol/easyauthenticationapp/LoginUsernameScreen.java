@@ -31,8 +31,8 @@ public class LoginUsernameScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_username_screen);
 
-        usernameInput = findViewById(R.id.loginUsername);
-        submitButton = findViewById(R.id.lastSubmitButton);
+        usernameInput = findViewById(R.id.githubEmail);
+        submitButton = findViewById(R.id.githubNextButton);
         progressBar = findViewById(R.id.loginProgressBar);
 
         phoneNumber = getIntent().getExtras().getString("phone");
