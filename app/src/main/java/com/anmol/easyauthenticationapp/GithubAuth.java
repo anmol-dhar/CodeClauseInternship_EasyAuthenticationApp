@@ -15,7 +15,10 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.OAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,7 +83,20 @@ public class GithubAuth extends AppCompatActivity {
                                         new OnSuccessListener<AuthResult>() {
                                             @Override
                                             public void onSuccess(AuthResult authResult) {
-                                                openNextActivity();
+                                                //Get GitHub username and email.
+                                                String githubUsername = authResult.getAdditionalUserInfo().getUsername();
+                                                String githubEmail = authResult.getAdditionalUserInfo().getProfile().get("email").toString();
+
+                                                //Save GitHub username and email to Firebase.
+                                                FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+                                                if (currentUser != null) {
+                                                    DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("users").child(currentUser.getUid());
+                                                    userRef.child("githubUsername").setValue(githubUsername);
+                                                    userRef.child("githubEmail").setValue(githubEmail);
+                                                }
+
+                                                //Open MainActivity and pass GitHub details.
+                                                openNextActivity(githubUsername, githubEmail);
                                             }
                                         })
                                 .addOnFailureListener(
@@ -97,11 +113,14 @@ public class GithubAuth extends AppCompatActivity {
 
     }
 
-    private void openNextActivity() {
+    private void openNextActivity(String githubUsername, String githubEmail) {
+        // Intent to send GitHub username and email to MainActivity
         Intent intent = new Intent(GithubAuth.this, MainActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.putExtra("githubUsername", githubUsername);
+        intent.putExtra("githubEmail", githubEmail);
         Toast.makeText(getApplicationContext(), "Success GitHub login", Toast.LENGTH_SHORT).show();
         startActivity(intent);
         finish();
+
     }
 }

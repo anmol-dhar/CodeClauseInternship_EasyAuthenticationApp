@@ -81,21 +81,31 @@ public class MainActivity extends AppCompatActivity {
                 request.executeAsync();
             }
             else{
+                //Getting data from previous activity.
                 Intent intent = getIntent();
                 if (intent != null) {
-                    String phoneNumber = intent.getStringExtra("phone");
-                    String username = intent.getStringExtra("username");
+                    String githubUsername = intent.getStringExtra("githubUsername");
+                    String githubEmail = intent.getStringExtra("githubEmail");
 
-                    //setting mobile number and username.
-                    if (username != null) {
-                        name.setText("Username : " + username);
+                    if (githubUsername != null && githubEmail != null) {
+                        // If GitHub details are available, set the text in the UI
+                        name.setText("GitHub Username : " + githubUsername);
+                        email.setText("GitHub Email : " + githubEmail);
                     }
-                    if (phoneNumber != null) {
-                        email.setText("Mobile number : " + phoneNumber);
+                    else{
+                        String phoneNumber = intent.getStringExtra("phone");
+                        String username = intent.getStringExtra("username");
+
+                        //setting mobile number and username.
+                        if (username != null) {
+                            name.setText("Username : " + username);
+                        }
+                        if (phoneNumber != null) {
+                            email.setText("Mobile number : " + phoneNumber);
+                        }
                     }
                 }
             }
-            //github login here
         }
 
         //Logout button.
